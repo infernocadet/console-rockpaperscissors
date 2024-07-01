@@ -17,11 +17,11 @@ function checkString(string) {
 function getComputerChoice() {
   number = Math.floor(Math.random() * 3);
   if (number === 0) {
-    return "Rock";
+    return "rock";
   } else if (number === 1) {
-    return "Paper";
+    return "paper";
   } else {
-    return "Scissors";
+    return "scissors";
   }
 }
 
@@ -37,4 +37,68 @@ function getHumanChoice(flag) {
   return choice.toLowerCase();
 }
 
-console.log(getHumanChoice());
+function humanWin(humanChoice, computerChoice) {
+  console.log(`Nice! ${humanChoice} beats ${computerChoice}.`);
+  humanScore += 1;
+  return;
+}
+
+function humanLose(humanChoice, computerChoice) {
+  console.log(`Oh no! ${humanChoice} loses against ${computerChoice}.`);
+  computerScore += 1;
+  return;
+}
+
+function tie(humanChoice, computerChoice) {
+  console.log("It's a tie. Try again!");
+  return;
+}
+
+function playRound() {
+  let humanChoice = getHumanChoice();
+  let computerChoice = getComputerChoice();
+  console.log(
+    `You chose ${humanChoice}. The computer chose ${computerChoice}.`
+  );
+  if (humanChoice === "rock") {
+    if (computerChoice === "scissors") {
+      humanWin(humanChoice, computerChoice);
+    } else if (computerChoice === "paper") {
+      humanLose(humanChoice, computerChoice);
+    } else {
+      tie();
+    }
+  }
+
+  if (humanChoice === "scissors") {
+    if (computerChoice === "paper") {
+      humanWin(humanChoice, computerChoice);
+    } else if (computerChoice === "rock") {
+      humanLose(humanChoice, computerChoice);
+    } else {
+      tie();
+    }
+  }
+
+  if (humanChoice === "paper") {
+    if (computerChoice === "rock") {
+      humanWin(humanChoice, computerChoice);
+    } else if (computerChoice === "scissors") {
+      humanLose(humanChoice, computerChoice);
+    } else {
+      tie();
+    }
+  }
+  console.log(
+    `Current score is: Human: ${humanScore} | Computer: ${computerScore}`
+  );
+}
+
+while (humanScore < 3 && computerScore < 3) {
+  playRound();
+}
+if (humanScore > computerScore) {
+  console.log("Congrats! You win!");
+} else {
+  console.log("Heartbreaking Defeat");
+}
