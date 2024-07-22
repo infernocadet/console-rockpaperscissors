@@ -1,3 +1,12 @@
+/**
+ * Play game by clicking on buttons
+ * create three buttons
+ * add event listener which calls playRound function
+ * add divs for results and change console.log into DOM methods
+ * display running score
+ * announce winer of game
+ */
+
 const regex = /^[a-zA-Z]+$/;
 const options = ["scissors", "rock", "paper"];
 let humanScore = 0;
@@ -94,11 +103,11 @@ function playRound() {
   );
 }
 
-while (humanScore < 3 && computerScore < 3) {
-  playRound();
-}
-if (humanScore > computerScore) {
-  console.log("Congrats! You win!");
-} else {
-  console.log("Heartbreaking Defeat");
-}
+// while (humanScore < 3 && computerScore < 3) {
+//   playRound();
+// }
+// if (humanScore > computerScore) {
+//   console.log("Congrats! You win!");
+// } else {
+//   console.log("Heartbreaking Defeat");
+// }

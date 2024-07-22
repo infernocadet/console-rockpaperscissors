@@ -4,10 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <script src="resources/script.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="resources/style.css" />
   </head>
   <body>
-    <h2>play rock paper scissors</h2>
-    <p>right click -> inspect -> console</p>
+    <div class="header">
+      <h2>scissors, paper, rock!</h2>
+    </div>
+    <div class="tag-line">
+      <h3>let's see who wins!</h3>
+    </div>
+    <div class="body-container">
+      <div class="user-section">
+        <h3>you</h3>
+        <div class="options">
+          <div class="box-item">
+            <p class="emoji">&#x270B;</p>
+          </div>
+          <div class="box-item">
+            <p class="emoji">&#x270C;</p>
+          </div>
+          <div class="box-item">
+            <p class="emoji">&#x270A;</p>
+          </div>
+        </div>
+      </div>
+      <div class="score-section">
+        <h3>score</h3>
+        <p class="score-result-tag"></p>
+        <p id="score">3 - 2</p>
+      </div>
+      <div class="bot-section">
+        <h3>enemy</h3>
+        <p class="enemy-caption"></p>
+        <div class="options">
+          <div class="box-item enemy-box">
+            <p class="emoji">&#x270A;</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="resources/script.js"></script>
 </html>
